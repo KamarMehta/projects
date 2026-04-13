@@ -1,0 +1,132 @@
+.activity-view {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-left: 4px solid #4a90e2;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.activity-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  border-left: 4px solid #f59e0b;
+  background-color: #fffbf0;
+  border-radius: 4px;
+  border: 1px solid #f59e0b;
+}
+
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editor-field label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.editor-field input,
+.editor-field textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.editor-field input:focus,
+.editor-field textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+}
+
+.editor-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.editor-actions button {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-save {
+  background-color: #10b981;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #059669;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #dc2626;
+}
+
+.btn-cancel {
+  background-color: #6b7280;
+  color: white;
+}
+
+.btn-cancel:hover {
+  background-color: #4b5563;
+}
+
+.activity-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.tag.family-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.tag.couple-tag {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+.tag.pet-tag {
+  background-color: #ddd6fe;
+  color: #5b21b6;
+}
+
+.tag.dining-tag {
+  background-color: #fed7aa;
+  color: #92400e;
+}
+
+.tag.important-tag {
+  background-color: #fecaca;
+  color: #991b1b;
+}

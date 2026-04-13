@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.app {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.app > * {
+  background: white;
+}
+
+.app-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-bottom: 5px solid #fff;
+  border-radius: 15px 15px 0 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.app-header h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-header p {
+  font-size: 1.1em;
+  opacity: 0.95;
+}
+
+.app-header .subtitle {
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.trip-info {
+  background: #f8f9fa;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  border-bottom: 2px solid #e9ecef;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  text-align: center;
+  padding: 15px;
+}
+
+.info-card h3 {
+  color: #667eea;
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.info-card p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+}
+
+.tab-content {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+nav.nav-tabs {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 0;
+}
+
+.app-footer {
+  background: #f8f9fa;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  border-top: 2px solid #e9ecef;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 0 0 15px 15px;
+  font-size: 0.9em;
+}
+
+.section-title {
+  font-size: 1.8em;
+  color: #667eea;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.8em;
+  }
+
+  .trip-info {
+    padding: 15px 20px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .app-header,
+  .app-footer {
+    padding: 20px;
+  }
+}
+
+@media print {
+  .app {
+    background: white;
+    padding: 0;
+  }
+
+  nav {
+    display: none !important;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .app-footer {
+    border: none;
+  }
+
+  .tab-content {
+    display: block !important;
+  }
+}
+

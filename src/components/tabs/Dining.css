@@ -1,0 +1,81 @@
+.restaurant-card {
+  background: #fff3e0;
+  border-left: 5px solid #ff7043;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.restaurant-card:hover {
+  box-shadow: 0 5px 15px rgba(255, 112, 67, 0.2);
+}
+
+.restaurant-name {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #ff7043;
+  margin-bottom: 10px;
+}
+
+.restaurant-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 10px 0;
+  font-size: 0.95em;
+}
+
+.restaurant-info p {
+  margin: 5px 0;
+}
+
+.restaurant-specialty {
+  color: #d84315;
+  margin-top: 15px;
+}
+
+.restaurant-specialty ul {
+  margin-left: 20px;
+  line-height: 1.8;
+  color: #555;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.best-for {
+  margin-top: 15px;
+  color: #333;
+}
+
+.cooking-box {
+  background: #fff8e1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #fbc02d;
+}
+
+.cooking-box p {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 0.95em;
+}
+
+.meal-list {
+  color: #555;
+  line-height: 2;
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  .restaurant-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .restaurant-card {
+    page-break-inside: avoid;
+  }
+}
