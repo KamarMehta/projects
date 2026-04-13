@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
 import { TabNav } from './components/TabNav'
 import { Overview } from './components/tabs/Overview'
@@ -6,7 +6,6 @@ import { DaySchedule } from './components/tabs/DaySchedule'
 import { Dining } from './components/tabs/Dining'
 import { Shopping } from './components/tabs/Shopping'
 import { useActivities } from './services/useActivities'
-import firebaseAuth from './services/firebaseAuth'
 
 type TabType = 'overview' | 'day1' | 'day2' | 'day3' | 'dining' | 'shopping'
 
@@ -26,7 +25,6 @@ export interface DayInfo {
 
 function App() {
   const [activeTab, setActiveTab] = useState<TabType>('overview')
-  const [authError, setAuthError] = useState<string | null>(null)
   const {
     loading,
     error,
@@ -37,14 +35,6 @@ function App() {
     updateDayDate,
     getDayData,
   } = useActivities()
-
-  // Authenticate user on app load
-  useEffect(() => {
-    firebaseAuth.signInAnonymously().catch((err) => {
-      const errorMsg = err instanceof Error ? err.message : 'Unknown error'
-      setAuthError(errorMsg)
-    })
-  }, [])
 
   if (loading) {
     return (
@@ -60,7 +50,7 @@ function App() {
     )
   }
 
-  if (error || authError) {
+  if (error) {
     return (
       <div className="app">
         <header className="app-header">
@@ -68,8 +58,8 @@ function App() {
           <p>Error loading data</p>
         </header>
         <div style={{ padding: '2rem', textAlign: 'center', color: 'red' }}>
-          <p>❌ {error || authError}</p>
-          <p>Please check your Firebase configuration and internet connection</p>
+          <p>❌ {error}</p>
+          <p>Please check your internet connection and try again</p>
         </div>
       </div>
     )
