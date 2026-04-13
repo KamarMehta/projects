@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .vercel
 .env*.local
+service-account.json
+set-firebase-rules.mjs
