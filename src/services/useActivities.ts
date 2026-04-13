@@ -8,22 +8,6 @@ export const useActivities = () => {
   const [error, setError] = useState<string | null>(null)
   const [lastSync, setLastSync] = useState<Date>(new Date())
 
-  // Fetch all activities from Firebase (one-time load)
-  const fetchAllActivities = useCallback(async () => {
-    try {
-      setError(null)
-      const activities = await firebaseService.getAllActivities()
-      setDaysData(activities)
-      setLastSync(new Date())
-    } catch (err) {
-      const errorMessage = err instanceof Error ? err.message : 'Failed to load activities'
-      setError(errorMessage)
-      console.error('Error fetching activities:', err)
-    } finally {
-      setLoading(false)
-    }
-  }, [])
-
   // Initial load and subscribe to real-time updates
   useEffect(() => {
     // Initialize Firebase with default data

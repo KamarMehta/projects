@@ -28,7 +28,6 @@ function App() {
   const [activeTab, setActiveTab] = useState<TabType>('overview')
   const [authError, setAuthError] = useState<string | null>(null)
   const {
-    daysData,
     loading,
     error,
     lastSync,
